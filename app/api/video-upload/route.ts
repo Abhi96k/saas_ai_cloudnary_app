@@ -102,9 +102,11 @@ export async function POST(request: NextRequest) {
         duration: result.duration || 0,
       },
     });
+
     return NextResponse.json(video);
   } catch (error) {
     console.log("UPload video failed", error);
+
     return NextResponse.json(
       {
         error: "UPload video failed",
