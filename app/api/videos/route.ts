@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function GET(req: NextRequest): Promise<NextResponse> {
+export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
     const videos = await prisma.video.findMany({
       orderBy: {
@@ -17,6 +17,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
         {
           error: error.message,
         },
+
         {
           status: 500,
         }
@@ -26,5 +27,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       { error: "Unknown error occurred" },
       { status: 500 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }
