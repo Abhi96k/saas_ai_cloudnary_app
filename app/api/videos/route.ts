@@ -1,10 +1,10 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextRequest): Promise<NextResponse> {
+export async function GET(): Promise<NextResponse> {
   try {
     const videos = await prisma.video.findMany({
       orderBy: {
