@@ -5,7 +5,6 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -40,8 +39,12 @@ export async function POST(request: NextRequest) {
       !process.env.CLOUDINARY_API_SECRET
     ) {
       return NextResponse.json(
-        { error: "Cloudinary credentials not found" },
-        { status: 500 }
+        {
+          error: "Cloudinary credentials not found",
+        },
+        {
+          status: 500,
+        }
       );
     }
 
