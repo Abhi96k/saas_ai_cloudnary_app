@@ -40,3 +40,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+#### How to upload anything on Cloudinary
+
+Summary
+##### 🚀 Introduction to the series: The video is part of a series on building a SaaS product using AI with Cloudinary integration.
+##### 🌐 Cloudinary Overview: The main focus is on image and video uploads to Cloudinary using Next.js.
+##### 📄 Exploring Cloudinary Documentation: Users are guided through Cloudinary’s documentation, covering the upload process and related resources.
+##### 🔄 Image and Video Upload: Basic steps for uploading files using Cloudinary’s API, covering both node.js and Next.js integration.
+##### 🛠️ Advanced Upload Options: Discussion on advanced features like bulk uploads, public ID settings, and media transformation (such as cropping, applying effects, and generating thumbnails).
+##### 📝 Code Walkthrough: A detailed explanation of creating a function for file uploads, including authentication checks and API calls.
+##### 🎥 Video Upload Specifics: Special handling for video files, including chunking, transforming the file format, and managing large uploads.
+##### 📊 Real-Time Debugging: Troubleshooting and fixing common issues, such as Prisma model errors, during the development process.

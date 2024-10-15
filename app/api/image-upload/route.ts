@@ -11,6 +11,8 @@ cloudinary.config({
 interface CloudinaryUploadResult {
   public_id: string;
   [key: string]: any;
+  bytes: number;
+  duration?: number;
 }
 
 export async function POST(request: NextRequest) {
@@ -23,6 +25,21 @@ export async function POST(request: NextRequest) {
       },
       {
         status: 401,
+      }
+    );
+  }
+
+  if (
+    !process.env.CLOUDINARY_API_KEY ||
+    !process.env.CLOUDINARY_API_SECRET ||
+    !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+  ) {
+    return NextResponse.json(
+      {
+        error: "Cloudinary not configured",
+      },
+      {
+        status: 500,
       }
     );
   }
