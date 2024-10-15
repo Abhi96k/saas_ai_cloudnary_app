@@ -65,6 +65,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         publicId: result.public_id,
+        result,
       },
       {
         status: 200,
