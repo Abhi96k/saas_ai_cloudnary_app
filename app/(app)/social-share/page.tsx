@@ -1,34 +1,45 @@
-import React from "react";
+"use client";
 
-const SocialSharePage: React.FC = () => {
-  const shareUrl = window.location.href;
+import React, { useState, useEffect, useRef } from "react";
 
-  const handleShare = (platform: string) => {
-    let shareLink = "";
-    switch (platform) {
-      case "facebook":
-        shareLink = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-        break;
-      case "twitter":
-        shareLink = `https://twitter.com/intent/tweet?url=${shareUrl}`;
-        break;
-      case "linkedin":
-        shareLink = `https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}`;
-        break;
-      default:
-        break;
-    }
-    window.open(shareLink, "_blank");
-  };
+import { CldImage } from "next-cloudinary";
 
-  return (
-    <div>
-      <h1>Share this page</h1>
-      <button onClick={() => handleShare("facebook")}>Share on Facebook</button>
-      <button onClick={() => handleShare("twitter")}>Share on Twitter</button>
-      <button onClick={() => handleShare("linkedin")}>Share on LinkedIn</button>
-    </div>
-  );
+const socialFormats = {
+  "Instagram Square (1:1)": {
+    width: 1080,
+    height: 1080,
+    aspectRatio: "1:1",
+  },
+  "Instagram Portrait (4:5)": {
+    width: 1080,
+    height: 1350,
+    aspectRatio: "4:5",
+  },
+  "Twitter Post (16:9)": {
+    width: 1200,
+    height: 675,
+    aspectRatio: "16:9",
+  },
+  "Twitter Header (3:1)": {
+    width: 1500,
+    height: 500,
+    aspectRatio: "3:1",
+  },
+  "Facebook Cover (205:78)": {
+    width: 820,
+    height: 312,
+    aspectRatio: "205:78",
+  },
 };
 
-export default SocialSharePage;
+type SocialFormat = keyof typeof socialFormats;
+function SocialShare() {
+
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+
+  return (
+
+  );
+}
+
+export default SocialShare;

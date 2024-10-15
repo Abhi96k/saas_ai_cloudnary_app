@@ -41,10 +41,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-#### How to upload anything on Cloudinary
+### How to upload anything on Cloudinary
 
 Summary
-##### 🚀 Introduction to the series: The video is part of a series on building a SaaS product using AI with Cloudinary integration.
+
 ##### 🌐 Cloudinary Overview: The main focus is on image and video uploads to Cloudinary using Next.js.
 ##### 📄 Exploring Cloudinary Documentation: Users are guided through Cloudinary’s documentation, covering the upload process and related resources.
 ##### 🔄 Image and Video Upload: Basic steps for uploading files using Cloudinary’s API, covering both node.js and Next.js integration.
