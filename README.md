@@ -52,3 +52,17 @@ Summary
 ##### 📝 Code Walkthrough: A detailed explanation of creating a function for file uploads, including authentication checks and API calls.
 ##### 🎥 Video Upload Specifics: Special handling for video files, including chunking, transforming the file format, and managing large uploads.
 ##### 📊 Real-Time Debugging: Troubleshooting and fixing common issues, such as Prisma model errors, during the development process.
+
+ # Image Upload & Transformation with Next.js and Cloudinary
+
+#### 🖼️ File Upload and UI Setup: Demonstration of a simple UI for uploading images using DaisyUI and Next.js. The heavy lifting is done by Cloudinary's APIs.
+
+#### 🔄 Image Transformations: Cloudinary provides automatic transformations, such as adjusting image size, focus (using gravity), and format changes on the fly using hooks.
+
+#### 🚀 Cloudinary’s Next.js Integration: Introduction to the next-cloudinary package, which simplifies the integration of Cloudinary's services with Next.js. Users can install it via NPM and access powerful image/video manipulation tools.
+
+#### 🛠️ Customization and Transformations: Users can transform images dynamically, applying cropping, background removal, resizing, and aspect ratio changes by adjusting parameters passed to Cloudinary.
+
+#### 📥 Handling Downloads: An in-depth explanation of using JavaScript to download the transformed image with custom names, demonstrating how to manipulate the binary data to give users the best experience.
+
+#### 💡 Practical Applications: These tools allow developers to create complex social media assets, profile picture transformations, and image enhancement applications.
