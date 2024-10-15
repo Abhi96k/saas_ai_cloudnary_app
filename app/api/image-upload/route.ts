@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { auth } from "@clerk/nextjs/server";
@@ -80,7 +81,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(video);
   } catch (error) {
     console.log("UPload video failed", error);
-    return NextResponse.json({ error: "UPload video failed" }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: "UPload video failed",
+      },
+      {
+        status: 500,
+      }
+    );
   } finally {
     await prisma.$disconnect();
   }
