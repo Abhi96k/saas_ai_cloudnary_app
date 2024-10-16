@@ -34,11 +34,9 @@ type SocialFormat = keyof typeof socialFormats;
 
 export default function SocialShare() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-
   const [selectedFormat, setSelectedFormat] = useState<SocialFormat>(
     "Instagram Square (1:1)"
   );
-
   const [isUploading, setIsUploading] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -96,9 +94,8 @@ export default function SocialShare() {
           .toLowerCase()}.png`;
         document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(link);
+        document.body.removeChild(link); // Remove the link after the click
+        window.URL.revokeObjectURL(url); // Revoke the object URL
       });
   };
 
