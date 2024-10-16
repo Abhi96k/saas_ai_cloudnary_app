@@ -32,6 +32,7 @@ function VideoUpload() {
     formData.append("originalSize", file.size.toString());
 
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const response = await axios.post("/api/video-upload", formData);
       // check for 200 response
       router.push("/");
