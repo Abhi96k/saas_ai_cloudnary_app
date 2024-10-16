@@ -1,6 +1,4 @@
-"use client";
 import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import { Download, Clock, FileDown, FileUp } from "lucide-react";
 import dayjs from "dayjs";
@@ -78,22 +76,26 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, onDownload }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <figure className="aspect-video relative">
-        {isHovered && !previewError ? (
-          <video
-            src={getPreviewVideoUrl(video.publicId)}
-            autoPlay
-            muted
-            loop
-            className="w-full h-full object-cover"
-            onError={handlePreviewError}
-          />
+        {isHovered ? (
+          previewError ? (
+            <div className="w-full h-full flex items-center justify-center bg-gray-200">
+              <p className="text-red-500">Preview not available</p>
+            </div>
+          ) : (
+            <video
+              src={getPreviewVideoUrl(video.publicId)}
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover"
+              onError={handlePreviewError}
+            />
+          )
         ) : (
-          <Image
+          <img
             src={getThumbnailUrl(video.publicId)}
             alt={video.title}
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
         )}
         <div className="absolute bottom-2 right-2 bg-base-100 bg-opacity-70 px-2 py-1 rounded-lg text-sm flex items-center">
